@@ -24,5 +24,5 @@ class Solution:
   sorted_list =[1,3]
   print(summaryRanges(sorted_list))
 
-  ## Run Time: 38ms (Beats 31.63%) 
-  ## Memory: 16.49mb (Beats 67.16%)
+  ## Run Time: 34ms (Beats 61.39%) 
+  ## Memory: 26.11mb (Beats 16.50%)
