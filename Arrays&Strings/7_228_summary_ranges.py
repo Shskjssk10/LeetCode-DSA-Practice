@@ -4,7 +4,7 @@ class Solution:
     if len(nums) == 0: return []
     if len(nums) == 1: return [f"{str(nums[0])}"]
     min = nums[0]
-    flag = False
+    flag = False ## True if it is consec with prev number
     sub_check = 1
     for i in range(1, len(nums[1:])+1):
       # print(min+sub_check != nums[i])
