@@ -36,3 +36,6 @@ class Solution:
   ## Final Draft
   ## Run Time: 30ms (Beats 93.59%) 
   ## Memory: 16.56mb (Beats 68.74%)
+
+  ## FYI: This was, for some reason, WAY easier than the previous challenges despite it being 
+  ##      5/10 when the rest were lower ;-;
