@@ -5,7 +5,7 @@ This repo contains the code I have done to all the questions on LeetCode that I 
 
 ## Code Documentation
 Python files are named in the following format: 
-(Problem No.)_(Problem Name).py
+(AlgoMap Prob No.)_ (LeetCode Problem No.)_(Problem Name).py
 
 Within each Python file contains its run-time and memory usage with its stats.
 
