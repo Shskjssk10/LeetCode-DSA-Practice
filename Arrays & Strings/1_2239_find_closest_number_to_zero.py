@@ -46,5 +46,3 @@ class Solution:
 ## Final Draft
 ## Run Time: 121ms (Beats 99.95%) 
 ## Memory: 16.76mb (Beats 60.47%)
-
-## FYI: I did this without ANY DSA knowledge whatsoever, just plain Python knowledge.
