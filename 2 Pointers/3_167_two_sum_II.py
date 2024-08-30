@@ -16,3 +16,4 @@ print(solution.twoSum(numbers, target))
 
 ## Run Time: 5245ms (Beats 5.03%) 
 ## Memory: 17.70mb (Beats 83.57%)
+## Time Complexity: O(n^2)
