@@ -4,38 +4,43 @@ class Solution:
     grouped_anagrams.append([strs[0]])
     if len(strs) == 1:  
       return grouped_anagrams 
+    
+    stored_dict = {}
+    current_word_dict = {}
+    for letter in strs[0]:
+      if letter not in current_word_dict:
+        current_word_dict[letter] = 1 
+      else:
+        current_word_dict[letter] += 1
+    stored_dict[0] = current_word_dict
+
+    # Loops through strs
     for word in strs[1:]:
-      current_word = {}
+      current_word_dict = {}
+      # Makes a dict for each word
       for letter in word:
-          if letter not in current_word:
-            current_word[letter] = 1 
-          else:
-            current_word[letter] += 1
-      anagram_found = False
-      for group in grouped_anagrams:
-        potential_anagram = {}
-        # Dictionary for potential anagram  
-        if len(group[0]) == 0 and len(word) == len(group[0]):
-          print("this got run")
-          anagram_found = True 
-          group.append(word)
+        if letter not in current_word_dict:
+          current_word_dict[letter] = 1 
+        else:
+          current_word_dict[letter] += 1
+      found_anagram = False
+
+      # Compares to find for anagram 
+      for index in stored_dict:
+        if current_word_dict == stored_dict[index]:
+          grouped_anagrams[index].append(word)
+          found_anagram = True
           break
-        for letter in group[0]:
-          if letter not in potential_anagram:
-            potential_anagram[letter] = 1 
-          else:
-            potential_anagram[letter] += 1
-        # Checking if word is anagram
-        if len(word) != len(group[0]):
-          continue
-        if current_word == potential_anagram:
-          anagram_found = True
-          group.append(word)
-      if anagram_found is False:
-        grouped_anagrams.append([word]) 
+      
+      # Appended to grouped_anagrams if no anagram is found
+      if found_anagram is False:
+        grouped_anagrams.append([word])
+        stored_dict[len(stored_dict)] = current_word_dict
     return grouped_anagrams
+
 solution = Solution()
 strs = ["stop","pots","reed","","tops","deer","opts",""]
 print(solution.groupAnagrams(strs))
-# print(solution.make_dictionary("stop"))
-# print(solution.make_dictionary("pots"))
+
+## Run Time: 1849ms (Beats 5.03%) 
+## Memory: 21.54mb (Beats 27.93%)
