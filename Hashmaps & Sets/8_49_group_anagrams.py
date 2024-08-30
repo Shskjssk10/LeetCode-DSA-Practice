@@ -5,11 +5,18 @@ class Solution:
     if len(strs) == 1:  
       return grouped_anagrams 
     for word in strs[1:]:
+      current_word = {}
+      for letter in word:
+          if letter not in current_word:
+            current_word[letter] = 1 
+          else:
+            current_word[letter] += 1
       anagram_found = False
       for group in grouped_anagrams:
         potential_anagram = {}
         # Dictionary for potential anagram  
         if len(group[0]) == 0 and len(word) == len(group[0]):
+          print("this got run")
           anagram_found = True 
           group.append(word)
           break
@@ -19,23 +26,16 @@ class Solution:
           else:
             potential_anagram[letter] += 1
         # Checking if word is anagram
-        for letter in word: 
-          if letter not in potential_anagram:
-            break
-          elif potential_anagram[letter] == 1 and len(potential_anagram) == 1:
-            group.append(word)
-            anagram_found = True
-            break
-          elif potential_anagram[letter] == 1:
-            del potential_anagram[letter]
-          else:
-            potential_anagram[letter] -= 1
-        if anagram_found:
-          break
+        if len(word) != len(group[0]):
+          continue
+        if current_word == potential_anagram:
+          anagram_found = True
+          group.append(word)
       if anagram_found is False:
         grouped_anagrams.append([word]) 
     return grouped_anagrams
-
 solution = Solution()
-strs = ["",""]
+strs = ["stop","pots","reed","","tops","deer","opts",""]
 print(solution.groupAnagrams(strs))
+# print(solution.make_dictionary("stop"))
+# print(solution.make_dictionary("pots"))
