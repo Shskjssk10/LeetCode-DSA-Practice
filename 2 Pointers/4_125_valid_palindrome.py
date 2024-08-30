@@ -1,25 +1,18 @@
 class Solution:
   def isPalindrome(self, s: str) -> bool:
-    holder = list(s)
     left_index = 0
     right_index = len(s) - 1
-    while left_index < right_index:
-      if holder[left_index].isalnum() is False:
-        s = s.replace(holder[left_index], "")
-        del holder[left_index]
+    while left_index < right_index: 
+      if s[left_index].isalnum() == False: 
         left_index += 1
-      elif holder[right_index].isalnum() is False: 
-        s = s.replace(holder[right_index], "")
-        del holder[right_index]
+      elif s[right_index].isalnum() == False: 
         right_index -= 1
-      else:
-        holder[left_index], holder[right_index] = holder[right_index].lower(), holder[left_index].lower()
+      else: 
+        if s[left_index].lower() != s[right_index].lower(): 
+          return False
         left_index += 1
         right_index -= 1
-    print(f"{holder}\n{list(s.lower())}")
-    if list(s.lower()) == holder:
-      return True
-    return False
+    return True
 
     # for letter in s:
     #   if letter.isalnum() == False:
@@ -40,6 +33,11 @@ class Solution:
 solution = Solution()
 s = "A man, a plan, a canal: Panama"
 print(solution.isPalindrome(s))
+
+## Final Draft
+## Run Time: 44ms (Beats 62.48%) 
+## Memory: 17.01mb (Beats 54.72%)
+## Time Complexity: O(n)
 
 ## First Draft
 ## Run Time: 1463ms (Beats 5.19%) 
