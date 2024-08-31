@@ -31,3 +31,5 @@ print(solution.productExceptSelf(nums))
 
 ## Run Time: 267ms (Beats 61.33%) 
 ## Memory: 25.04mb (Beats 98.39%)
+## Time Complexity: O(n)
+## Space Complexity: O(1)
