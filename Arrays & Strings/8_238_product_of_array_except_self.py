@@ -29,7 +29,7 @@ solution = Solution()
 nums = [0,2,3,4]
 print(solution.productExceptSelf(nums))
 
-## Run Time: 267ms (Beats 61.33%) 
-## Memory: 25.04mb (Beats 98.39%)
+## Run Time: 258ms (Beats 86.93%) 
+## Memory: 25.21mb (Beats 96.87%)
 ## Time Complexity: O(n)
 ## Space Complexity: O(1)
